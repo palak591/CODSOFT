@@ -1,0 +1,125 @@
+/* Reset and base */
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin:0;
+    background: #121212;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #eee;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #calculator {
+    background: #1e1e1e;
+    border-radius: 16px;
+    box-shadow:
+      0 8px 16px rgba(0,0,0,0.6),
+      inset 0 2px 5px rgba(255,255,255,0.05);
+    width: 320px;
+    max-width: 95vw;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #display {
+    background: #292929;
+    padding: 24px 20px;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: right;
+    border-radius: 16px 16px 0 0;
+    letter-spacing: 0.05em;
+    user-select: none;
+    overflow-wrap: break-word;
+    min-height: 80px;
+    color: #f5f5f5;
+  }
+
+  #buttons {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
+    background: #1e1e1e;
+    padding: 20px;
+  }
+
+  button {
+    font-size: 1.5rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 600;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  .btn-digit {
+    background: #333333;
+    color: #eee;
+    box-shadow:
+      0 4px #222222,
+      inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .btn-digit:hover {
+    background: #444444;
+  }
+
+  .btn-operator {
+    background: #ff9500;
+    color: #fff;
+    box-shadow:
+      0 4px #cc7a00,
+      inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .btn-operator:hover {
+    background: #ffb733;
+  }
+
+  .btn-clear {
+    background: #ff3b30;
+    color: #fff;
+    box-shadow:
+      0 4px #b33128,
+      inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .btn-clear:hover {
+    background: #ff5e57;
+  }
+
+  .btn-zero {
+    grid-column: span 2;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 400px) {
+    #calculator {
+      width: 95vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+    #display {
+      font-size: 2.4rem;
+      padding: 20px 16px;
+      min-height: 70px;
+    }
+    button {
+      font-size: 1.3rem;
+    }
+  }
+
